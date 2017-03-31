@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace App.Web.ViewModel.Account
+namespace App.Web.ViewModels.Account
 {
     public class ForgotViewModel
     {

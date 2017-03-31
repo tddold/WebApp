@@ -1,4 +1,4 @@
-﻿namespace App.Web.ViewModel.Account
+﻿namespace App.Web.ViewModels.Account
 {
     public class ExternalLoginListViewModel
     {
