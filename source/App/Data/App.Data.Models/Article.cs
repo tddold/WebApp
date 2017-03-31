@@ -8,8 +8,7 @@ namespace App.Data.Models
 
         [MaxLength(100), MinLength(5)]
         public string Title { get; set; }
-
-        [MaxLength(500), MinLength(5)]
+                
         public string Context { get; set; }
     }
 }
