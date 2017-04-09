@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using App.Data.Models.Contracts;
 
 namespace App.Data.Models
 {
-    public class HomeArticle
+    public class HomeArticle : IDbModel
     {
         public int Id { get; set; }
 

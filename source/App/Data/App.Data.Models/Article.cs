@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using App.Data.Models.Contracts;
+using System.ComponentModel.DataAnnotations;
 
 namespace App.Data.Models
 {
-    public class Article
+    public class Article:IDbModel
     {
         public int Id { get; set; }
 

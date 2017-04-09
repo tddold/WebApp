@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using App.Data.Models.Contracts;
+using System.Collections.Generic;
 
 namespace App.Data.Models
 {
-    public class Gallery
+    public class Gallery:IDbModel
     {
         private ICollection<Image> images;
 

@@ -1,6 +1,8 @@
-﻿namespace App.Data.Models
+﻿using App.Data.Models.Contracts;
+
+namespace App.Data.Models
 {
-    public class Image
+    public class Image:IDbModel
     {
         public int Id { get; set; }
 
