@@ -1,11 +1,9 @@
-﻿using App.Data.Models.Contracts;
+﻿using App.Data.Common.Models;
 
 namespace App.Data.Models
 {
-    public class Image:IDbModel
+    public class Image: BaseModel<int>
     {
-        public int Id { get; set; }
-
         public string Url { get; set; }
     }
 }

@@ -1,11 +1,9 @@
-﻿using App.Data.Models.Contracts;
+﻿using App.Data.Common.Models;
 
 namespace App.Data.Models
 {
-    public class HomeArticle : IDbModel
+    public class HomeArticle : BaseModel<int>
     {
-        public int Id { get; set; }
-
         public int ArticleId { get; set; }
 
         public virtual Article Article { get; set; }

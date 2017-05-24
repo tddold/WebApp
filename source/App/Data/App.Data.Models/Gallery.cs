@@ -1,9 +1,9 @@
-﻿using App.Data.Models.Contracts;
+﻿using App.Data.Common.Models;
 using System.Collections.Generic;
 
 namespace App.Data.Models
 {
-    public class Gallery:IDbModel
+    public class Gallery: BaseModel<int>, IAuditInfo, IDeletableEntity
     {
         private ICollection<Image> images;
 
@@ -11,8 +11,6 @@ namespace App.Data.Models
         {
             this.images = new HashSet<Image>();
         }
-
-        public int Id { get; set; }
 
         public virtual ICollection<Image> Images
         {

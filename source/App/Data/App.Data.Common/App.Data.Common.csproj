@@ -47,10 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDbContextSaveChanges.cs" />
     <Compile Include="Contracts\IUnitOfWork.cs" />
-    <Compile Include="EfGenericRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="EfUnitOfWork.cs" />
+    <Compile Include="Models\BaseModel{TKey}.cs" />
+    <Compile Include="Models\IAuditInfo.cs" />
+    <Compile Include="Models\IDeletableEntity.cs" />
+    <Compile Include="Models\IEntityWithCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

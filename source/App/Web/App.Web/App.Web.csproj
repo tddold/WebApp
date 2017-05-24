@@ -525,6 +525,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\App.Data.Common\App.Data.Common.csproj">
+      <Project>{5A20D0D6-B1C0-4FF4-A43C-A0EBB6D5CCD9}</Project>
+      <Name>App.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\App.Data.Models\App.Data.Models.csproj">
       <Project>{A743F28C-4C88-46B4-9A7F-A707C22175A3}</Project>
       <Name>App.Data.Models</Name>
