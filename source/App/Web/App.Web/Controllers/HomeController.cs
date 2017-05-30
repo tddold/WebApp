@@ -10,6 +10,7 @@ namespace App.Web.Controllers
     {
         public ActionResult Index()
         {
+            var homeArticle - 
             return View();
         }
 

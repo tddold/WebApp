@@ -30,11 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AngleSharp.0.9.9\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlSanitizer.3.4.156\lib\net45\HtmlSanitizer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -54,8 +60,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ArticleService.cs" />
     <Compile Include="Common\BaseDataService{T}.cs" />
     <Compile Include="Common\BaseDataWithCreatorService{T}.cs" />
+    <Compile Include="Common\Contracts\IAdministrationService{T}.cs" />
     <Compile Include="Common\Contracts\IArticleService.cs" />
     <Compile Include="Common\Contracts\IBaseDataService{T}.cs" />
     <Compile Include="Common\Contracts\IBaseDataWithCreatorService{T}.cs" />
@@ -64,7 +72,14 @@
     <Compile Include="Common\Contracts\IImageService.cs" />
     <Compile Include="Common\Contracts\IItemArticleService.cs" />
     <Compile Include="Common\Contracts\ISanitizer.cs" />
+    <Compile Include="Common\Contracts\IService{T}.cs" />
     <Compile Include="Common\Contracts\IUserService{T}.cs" />
+    <Compile Include="Common\GallerlyService.cs" />
+    <Compile Include="Common\HomeArticleService.cs" />
+    <Compile Include="Common\HtmlSanitizerAdapter.cs" />
+    <Compile Include="Common\ImagesService.cs" />
+    <Compile Include="Common\ItemArticleService.cs" />
+    <Compile Include="Common\Service{T}.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +88,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\App.Common\App.Common.csproj">
+      <Project>{A1CC492A-9ECD-4A78-BC89-38EE6564AA57}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\App.Data.Common\App.Data.Common.csproj">
       <Project>{5A20D0D6-B1C0-4FF4-A43C-A0EBB6D5CCD9}</Project>
       <Name>App.Data.Common</Name>

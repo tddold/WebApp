@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System;
 using System.Linq;
 using App.Data.Common.Models;
+using App.Data.Migrations;
 
 namespace App.Data
 {
@@ -13,6 +14,7 @@ namespace App.Data
         public AppDbContext()
             : base("WebAppDb", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AppDbContext, Configuration>());
         }
 
         public new IDbSet<T> Set<T>()
@@ -51,14 +53,14 @@ namespace App.Data
                 e.Entity is IAuditInfo && ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
             {
                 var entity = (IAuditInfo)entry.Entity;
-                if (entry.State == EntityState.Added && entity.CreatedOn == default(DateTime))
-                {
-                    entity.CreatedOn = DateTime.UtcNow;
-                }
-                else
-                {
-                    entity.ModifieOn = DateTime.UtcNow;
-                }
+                //if (entry.State == EntityState.Added && entity.CreatedOn == default(DateTime))
+                //{
+                //    entity.CreatedOn = DateTime.UtcNow;
+                //}
+                //else
+                //{
+                //    entity.ModifieOn = DateTime.UtcNow;
+                //}
             }
         }
 

@@ -12,6 +12,6 @@ namespace App.Services.Data.Common.Contracts
     {
         void Delete(object id, string userId);
 
-        IQueryable<T> GetAllByUser(string uderId);
+        IQueryable<T> GetAllByUser(string userId);
     }
 }

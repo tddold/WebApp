@@ -18,11 +18,11 @@ namespace App.Data.Models
 
         public bool IsDeleted { get; set; }
 
-        public DateTime DeletedOn { get; set; }
+        //public DateTime DeletedOn { get; set; }
 
-        public DateTime CreatedOn { get; set; }
+        //public DateTime CreatedOn { get; set; }
 
-        public DateTime? ModifieOn { get; set; }
+        //public DateTime? ModifieOn { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

@@ -2,7 +2,7 @@
 
 namespace App.Services.Data.Common.Contracts
 {
-    public interface IGalleryService : IBaseDataService<Gallery>, IImageService
+    public interface IGalleryService : IService<Image>, IImageService
     {
     }
 }

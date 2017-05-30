@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using NUnit.Framework;
 using System.Reflection;
-using App.Data.Models.Contracts;
 
 namespace App.Data.Tests.ContractsTests
 {
@@ -16,7 +15,7 @@ namespace App.Data.Tests.ContractsTests
             // Arrange
             var expected = Assembly.Load(modelAssemblyName)
                 .GetTypes()
-                .Where(x => x.IsClass && !x.IsAbstract && x.GetInterfaces().Contains(typeof(IDbModel)));
+                .Where(x => x.IsClass && !x.IsAbstract );
 
             // Act
             var result = typeof(AppDbContext)

@@ -7,6 +7,8 @@ namespace App.Data.Migrations
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System;
+    using System.Data;
 
     public sealed class Configuration : DbMigrationsConfiguration<AppDbContext>
     {
@@ -35,7 +37,8 @@ namespace App.Data.Migrations
             const string AdministratorPassword = AdministratorUserName;
 
             var users = new List<User>();
-            if (!context.Roles.Any())
+
+            if (!context.Roles.Any(r => r.Name == AdministratorUserName))
             {
                 // Create administrator role
                 var roleStore = new RoleStore<IdentityRole>(context);
@@ -46,7 +49,10 @@ namespace App.Data.Migrations
                 };
 
                 roleManager.Create(role);
+            }
 
+            if (!context.Users.Any(u => u.UserName == AdministratorUserName))
+            {
                 // Create administrator user
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);
@@ -60,7 +66,10 @@ namespace App.Data.Migrations
 
                 // Assign user to administrator role
                 userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
+            }
 
+            if (!context.Users.Any(u => u.UserName != AdministratorUserName))
+            {
                 // Create user role
                 var store = new UserStore<User>(context);
                 var manager = new UserManager<User>(store);
@@ -87,6 +96,38 @@ namespace App.Data.Migrations
                     manager.Create(newUser, name);
                     users.Add(newUser);
                 }
+            }
+
+            context.SaveChanges();
+
+            if (!context.Articles.Any())
+            {
+                context.Articles.Add(new Article
+                {
+                    Title = "Откъде произлиза?",
+                    Context = @"Противно на всеобщото вярване, Lorem Ipsum не е просто случаен текст. Неговите корени са в класическата Латинска литература от 45г.пр.Хр., което прави преди повече от 2000 години. Richard McClintock, професор по Латински от колежа Hampden-Sydney College във Вирджиния, изучавайки една от най-неясните латински думи ""consectetur"" в един от пасажите на Lorem Ipsum, и търсейки цитати на думата в класическата литература, открива точния източник. Lorem Ipsum е намерен в секции 1.10.32 и 1.10.33 от ""de Finibus Bonorum et Malorum""(Крайностите на Доброто и Злото) от Цицерон, написан през 45г.пр.Хр. Тази книга е трактат по теория на етиката, много популярна през Ренесанса. Първият ред на Lorem Ipsum идва от ред, намерен в секция 1.10.32."
+                });
+
+                context.Articles.Add(new Article
+                {
+                    Title = "Откъде мога да го взема?",
+                    Context = @"Съществуват много вариации на пасажа Lorem Ipsum, но повечето от тях са променени по един или друг начин чрез добавяне на смешни думи или разбъркване на думите, което не изглежда много достоверно. Ако искате да използвате пасаж от Lorem Ipsum, трябва да сте сигурни, че в него няма смущаващи или нецензурни думи. Всички Lorem Ipsum генератори в Интернет използват предефинирани пасажи, който се повтарят, което прави този този генератор първия истински такъв. Той използва речник от над 200 латински думи, комбинирани по подходящ начин като изречения, за да генерират истински Lorem Ipsum пасажи. Оттук следва, че генерираният Lorem Ipsum пасаж не съдържа повторения, смущаващи, нецензурни и всякакви неподходящи думи. "
+                });
+
+                context.SaveChanges();
+            }
+
+            if (!context.HomeArticles.Any())
+            {
+                context.HomeArticles.Add(new HomeArticle
+                {
+                    ArticleId = 1
+                });
+
+                context.HomeArticles.Add(new HomeArticle
+                {
+                    ArticleId = 2
+                });
 
                 context.SaveChanges();
             }
