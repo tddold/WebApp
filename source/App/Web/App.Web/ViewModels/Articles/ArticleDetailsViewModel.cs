@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace App.Web.ViewModels.Articles
 {
-    public class ArticleDetailsViewModel : IMapFrom<Article>, IHaveCustomMappings
+    public class ArticleDetailsViewModel : IMapFrom<Article>
     {
         private ISanitizer sanitaizer;
 
@@ -31,10 +31,10 @@ namespace App.Web.ViewModels.Articles
         [Display(Name = "Url")]
         public string ImagePath { get; set; }
 
-        public void CreateMappings(IMapperConfiguration configuration)
-        {
-            throw new NotImplementedException();
-        }
+        //public void CreateMappings(IMapperConfiguration configuration)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
     }
 }

@@ -25,7 +25,7 @@ namespace App.Web.Infrastructure
                 });
         }
 
-        private static void LoadBothWaysMapping(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
+        public static void LoadBothWaysMapping(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
         {
             var maps = (from t in types
                         from i in t.GetInterfaces()
@@ -45,7 +45,7 @@ namespace App.Web.Infrastructure
             }
         }
 
-        private void LoadStandardMappings(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
+        public static void LoadStandardMappings(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
         {
             var maps = (from t in types
                         from i in t.GetInterfaces()
@@ -64,7 +64,7 @@ namespace App.Web.Infrastructure
             }
         }
 
-        private void LoadReverseMappings(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
+        public static void LoadReverseMappings(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
         {
             var maps = (from t in types
                         from i in t.GetInterfaces()
@@ -83,7 +83,7 @@ namespace App.Web.Infrastructure
             }
         }
 
-        private void LoadCustomMappings(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
+        public static void LoadCustomMappings(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
         {
             var maps = (from t in types
                         from i in t.GetInterfaces()

@@ -1,8 +1,10 @@
-﻿using AutoMapper.QueryableExtensions;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace App.Web.Infrastructure
 {
@@ -40,10 +42,27 @@ namespace App.Web.Infrastructure
             //    }
             //}
 
-            var result = source.ProjectTo(AutoMapperConfig.Configuration, membersToExpand);
+            //var config = AutoMapperConfig.Configuration;
 
-            return result;
-            //return source.ProjectTo(AutoMapperConfig.Configuration, membersToExpand);
+
+            //if (config == null)
+            //{
+            //    config = new MapperConfiguration(
+
+            //    cfg =>
+            //    {
+            //        var types = Assembly.GetCallingAssembly().ExportedTypes;
+            //        AutoMapperConfig.LoadBothWaysMapping(types, cfg);
+            //        AutoMapperConfig.LoadStandardMappings(types, cfg);
+            //        AutoMapperConfig.LoadReverseMappings(types, cfg);
+            //        AutoMapperConfig.LoadCustomMappings(types, cfg);
+            //    });
+            //}
+
+            //var result = source.ProjectTo(config, membersToExpand);
+
+            //return result;
+            return source.ProjectTo(AutoMapperConfig.Configuration, membersToExpand);
         }
     }
 }

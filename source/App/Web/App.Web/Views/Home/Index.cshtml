@@ -40,29 +40,40 @@
                 <div id="carousel-slider" data-ride="carousel" class="carousel slide  animate-in" data-anim-type="fade-in-up">
 
                     <div class="carousel-inner">
-                        <div class="item active">
 
+                        @*Consectetur adipiscing elit felis dolor felis dolor vitae*@
+                        @foreach (var article in Model.AllArticles)
+                        {
+                            if (article.Id == 1)
+                            {
+                                @:<div class="item active">
+                            }
+
+                            if (article.Id != 1)
+                            {
+                                @:<div class="item">
+                            }
                             <h3>
-                                Consectetur adipiscing elit felis dolor felis dolor vitae
-                                @foreach (var article in Model.AllArticles)
-                                {
-                                    <span>article.Title</span>
-                                }
+                                @article.Title
+                                <p>
+                                    @article.Context
+                                    @*Lorem ipsumdolor sitamet, consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit. Lorem ipsumdolor sitamet,
+                                        consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit.*@
+                                </p>
                             </h3>
-                            <p>
-                                Lorem ipsumdolor sitamet, consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit. Lorem ipsumdolor sitamet,
-                                consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit.
-                            </p>
-                        </div>
-                        <div class="item">
-                            <h3>
-                                Lorem ipsumdolor sitamet, consect adipiscing elit
-                            </h3>
-                            <p>
-                                Lorem ipsumdolor sitamet, consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit. Lorem ipsumdolor sitamet,
-                                consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit.
-                            </p>
-                        </div>
+                                @:</div>
+                       }
+
+                        @*<div class="item">
+                                <h3>
+                                    Lorem ipsumdolor sitamet, consect adipiscing elit
+
+                                </h3>
+                                <p>
+                                    Lorem ipsumdolor sitamet, consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit. Lorem ipsumdolor sitamet,
+                                    consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit.
+                                </p>
+                            </div>*@
 
                     </div>
 
