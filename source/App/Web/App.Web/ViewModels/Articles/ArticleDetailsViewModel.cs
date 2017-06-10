@@ -1,9 +1,6 @@
 ﻿using App.Data.Models;
 using App.Web.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using AutoMapper;
 using App.Services.Data.Common.Contracts;
 using App.Services.Data.Common;
@@ -23,7 +20,7 @@ namespace App.Web.ViewModels.Articles
 
         [HiddenInput]
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "Title")]
         public string Title { get; set; }
