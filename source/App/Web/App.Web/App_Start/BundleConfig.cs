@@ -9,7 +9,7 @@ namespace App.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/assets/js/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/them").Include(
                        "~/assets/js/jquery - 1.11.1.js",
@@ -34,8 +34,8 @@ namespace App.Web
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/assets/js/bootstrap.js",
+                      "~/assets/js/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapthem").Include(
                      "~/assets/css/bootstrap.js"));

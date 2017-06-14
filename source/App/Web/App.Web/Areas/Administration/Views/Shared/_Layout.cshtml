@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/bundles/bootstrapthem")
+    @Styles.Render("~/bundles/ionicons")
+    @Styles.Render("~/bundles/font-awesome")
+    @Styles.Render("~/bundles/animations")
+    @Styles.Render("~/bundles/blue")
+    @Styles.Render("~/bundles/themjq")
+
+</head>
+<body data-spy="scroll" data-target="#menu-section">
+
+    <!--MENU SECTION START-->
+    <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("My web site", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <!--CONTACT SECTION START-->
+            <section id="contact">
+                <div class="container">
+                    <div class="row text-center header animate-in" data-anim-type="fade-in-up">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                            <h3>Contact Details </h3>
+                            <hr />
+
+                        </div>
+                    </div>
+
+                    <div class="row animate-in" data-anim-type="fade-in-up">
+
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="contact-wrapper">
+                                <h3>We Are Social</h3>
+                                <p>
+                                    Aliquam tempus ante placerat, consectetur tellus nec, porttitor nulla.
+                                </p>
+                                <div class="social-below">
+                                    <a href="#" class="btn button-custom btn-custom-two"> Facebook</a>
+                                    <a href="#" class="btn button-custom btn-custom-two"> Twitter</a>
+                                    <a href="#" class="btn button-custom btn-custom-two"> Google +</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="contact-wrapper">
+                                <h3>Quick Contact</h3>
+                                <h4><strong>Email : </strong> info@yuordomain.com </h4>
+                                <h4><strong>Call : </strong> +09-88-99-77-55 </h4>
+                                <h4><strong>Skype : </strong> Yujhaeu78 </h4>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="contact-wrapper">
+                                <h3>Address : </h3>
+                                <h4>230/45 , New way Lane , </h4>
+                                <h4>United States</h4>
+                                <div class="footer-div">
+                                    &copy; 2015 YourDomain | <a href="http://www.designbootstrap.com/" target="_blank">by DesignBootstrp</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </section>
+            <!--CONTACT SECTION END-->
+
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/them")
+    @Scripts.Render("~/bundles/themvega")
+    @Scripts.Render("~/bundles/themfan")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
