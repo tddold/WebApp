@@ -4,16 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Scripts.Render("~/bundles/jquery")
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/bundles/bootstrapthem")
-    @Styles.Render("~/bundles/ionicons")
-    @Styles.Render("~/bundles/font-awesome")
-    @Styles.Render("~/bundles/animations")
-    @Styles.Render("~/bundles/blue")
-    @Styles.Render("~/bundles/themjq")
+
+    @if (User.Identity.Name == "admin@site.com")
+    {
+        @Scripts.Render("~/bundles/jquery")
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/bundles/bootstrapthem")
+        @Styles.Render("~/bundles/ionicons")
+        @Styles.Render("~/bundles/font-awesome")
+        @*@Styles.Render("~/bundles/animations")
+        @Styles.Render("~/bundles/blue")
+        @Styles.Render("~/bundles/themjq")*@
+    }
+    else
+    {
+        @Scripts.Render("~/bundles/jquery")
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/bundles/bootstrapthem")
+        @Styles.Render("~/bundles/ionicons")
+        @Styles.Render("~/bundles/font-awesome")
+        @Styles.Render("~/bundles/animations")
+        @Styles.Render("~/bundles/blue")
+        @Styles.Render("~/bundles/themjq")
+    }
+
 
 </head>
 <body data-spy="scroll" data-target="#menu-section">
@@ -45,7 +63,7 @@
 
         <footer>
             <!--CONTACT SECTION START-->
-            <section id="contact">
+            @*<section id="contact">
                 <div class="container">
                     <div class="row text-center header animate-in" data-anim-type="fade-in-up">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -97,12 +115,22 @@
 
 
                 </div>
-            </section>
+            </section>*@
             <!--CONTACT SECTION END-->
 
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
+
+
+@if (User.Identity.Name == "admin@site.com")
+{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+}
+else
+{
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/them")
@@ -110,5 +138,6 @@
     @Scripts.Render("~/bundles/themfan")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+}
 </body>
 </html>

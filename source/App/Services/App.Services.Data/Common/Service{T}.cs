@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace App.Services.Data.Common
 {
-    public abstract class Service<T> : IService<T>
+    public  class Service<T> : IService<T>
       where T : BaseModel<int>
     {
         private readonly IRepository<T> repository;

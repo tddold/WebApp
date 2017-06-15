@@ -232,6 +232,10 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ArticlesController.cs" />
+    <Compile Include="Areas\Administration\Models\ArticleInputViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ArticleViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -454,6 +458,11 @@
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Articles\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Articles\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Articles\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Articles\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Articles\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom-solid.js" />
@@ -541,8 +550,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Controllers\" />
-    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Administration\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -568,6 +576,10 @@
     <ProjectReference Include="..\..\App.Web.Infrastructure\App.Web.Infrastructure.csproj">
       <Project>{950E354A-BB6F-4190-A9DB-3054F63E3EF7}</Project>
       <Name>App.Web.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\App.Common\App.Common.csproj">
+      <Project>{A1CC492A-9ECD-4A78-BC89-38EE6564AA57}</Project>
+      <Name>App.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Data\App.Data.Common\App.Data.Common.csproj">
       <Project>{5A20D0D6-B1C0-4FF4-A43C-A0EBB6D5CCD9}</Project>
