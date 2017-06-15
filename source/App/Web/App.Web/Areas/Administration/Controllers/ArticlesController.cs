@@ -75,28 +75,28 @@ namespace App.Web.Areas.Administration.Controllers
         //    return View(article);
         //}
 
-        //// GET: Administration/Articles/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
+        // GET: Administration/Articles/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
-        //// POST: Administration/Articles/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Articles.Add(article);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
+        // POST: Administration/Articles/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
+        {
+            if (ModelState.IsValid)
+            {
+                articles.Add(article);
+                articles.Save();
+                return RedirectToAction("Index");
+            }
 
-        //    return View(article);
-        //}
+            return View(article);
+        }
 
         //// GET: Administration/Articles/Edit/5
         //public ActionResult Edit(int? id)
