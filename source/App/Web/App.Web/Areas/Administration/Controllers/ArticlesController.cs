@@ -8,6 +8,9 @@ using App.Services.Data.Common.Contracts;
 using App.Web.Areas.Administration.Models;
 using App.Web.Infrastructure;
 
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+
 namespace App.Web.Areas.Administration.Controllers
 {
     public class ArticlesController : AdministrationController
@@ -95,7 +98,8 @@ namespace App.Web.Areas.Administration.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(article);
+            //return View(article);
+            return this.Json(new[] { articles });
         }
 
         //// GET: Administration/Articles/Edit/5

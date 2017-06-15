@@ -53,12 +53,23 @@ namespace App.Web
             bundles.Add(new ScriptBundle("~/bundles/blue").Include(
                      "~/assets/css/style-blue.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+                  "~/Scripts/KendoUI/kendo.all.min.js",
+                  "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
+
+                  bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                   "~/Scripts/jquery-{version}.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/bundles/themjq").Include(
                   "~/assets/js/source/jquery.fancybox.css"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+                   "~/Content/KendoUI/kendo.common.min.css",
+                   "~/Content/KendoUI/kendo.default.min.css"));
         }
     }
 }
