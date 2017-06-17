@@ -10,19 +10,21 @@ using App.Web.Infrastructure;
 
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using System.Web;
+using System.Net;
 
 namespace App.Web.Areas.Administration.Controllers
 {
     public class ArticlesController : AdministrationController
     {
         private const int ItemsPerPage = 5;
-        private readonly IService<Article> articleService;
+        //private readonly IService<Article> articleService;
         //private readonly IBaseDataService<Article> articleService;
         private readonly IArticleService articles;
 
-        public ArticlesController(IService<Article> articleService, IArticleService articles)
+        public ArticlesController(IArticleService articles)
         {
-            this.articleService = articleService;
+            //this.articleService = articleService;
             this.articles = articles;
         }
 
@@ -63,6 +65,13 @@ namespace App.Web.Areas.Administration.Controllers
             return View(viewModels);
         }
 
+        [HttpPost]
+        public ActionResult Save(string editor)
+        {
+            string value = HttpUtility.HtmlDecode(editor);
+
+            return View();
+        }
         //// GET: Administration/Articles/Details/5
         //public ActionResult Details(int? id)
         //{
@@ -133,39 +142,39 @@ namespace App.Web.Areas.Administration.Controllers
         //    return View(article);
         //}
 
-        //// GET: Administration/Articles/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Article article = db.Articles.Find(id);
-        //    if (article == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(article);
-        //}
+        // GET: Administration/Articles/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Article article = articles.GetById(id);
+            if (article == null)
+            {
+                return HttpNotFound();
+            }
+            return View(article);
+        }
 
-        //// POST: Administration/Articles/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Article article = db.Articles.Find(id);
-        //    db.Articles.Remove(article);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        // POST: Administration/Articles/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            //Article article = articles.GetById(id);
+            articles.Delete(id);
+            articles.Save();
+            return RedirectToAction("Index");
+        }
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                articles.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

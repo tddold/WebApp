@@ -1,5 +1,5 @@
 ﻿@model App.Web.Areas.Administration.Models.ArticleViewModel
-   
+
 
 @{
     ViewBag.Title = "Create";
@@ -9,10 +9,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Article</h4>
         <hr />
@@ -25,7 +25,20 @@
             </div>
         </div>
 
-        @(Html.Kendo().Editor()
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Context, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @(Html.Kendo().Editor()
+        .Name("editor")
+        .Value("<p>Initial value</p>")
+                )
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Context, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @(Html.Kendo().Editor()
       .Name("editor")
       .HtmlAttributes(new { style = "height:440px", aria_label = "editor" })
       .Resizable(resizable => resizable.Content(true).Toolbar(true))
@@ -61,16 +74,18 @@
             <a href="http://www.telerik.com/forums">feedback</a>!
         </p>
     </text>)
-        )
+                )
+            </div>
+        </div>
 
-        <textarea>Next, get a free TinyMCE Cloud API key!</textarea>
+        @*<textarea>Next, get a free TinyMCE Cloud API key!</textarea>*@
 
         <div class="form-group">
-           
+
 
             @Html.LabelFor(model => model.Context, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Context, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Context, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Context, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -84,14 +99,14 @@
         </div>
 
         @*<div class="form-group">
-            @Html.LabelFor(model => model.IsDeleted, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsDeleted)
-                    @Html.ValidationMessageFor(model => model.IsDeleted, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.IsDeleted, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsDeleted)
+                        @Html.ValidationMessageFor(model => model.IsDeleted, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -106,5 +121,5 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
 }

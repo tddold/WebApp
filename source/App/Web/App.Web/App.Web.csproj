@@ -453,11 +453,17 @@
     <Content Include="Content\KendoUI\textures\transparency.png" />
     <Content Include="Content\KendoUI\textures\transtexture.png" />
     <Content Include="Content\style-blue.css" />
+    <Content Include="Content\web\editor\kendo-ui-web.png" />
     <Content Include="favicon.ico" />
     <Content Include="Libreries\Kendo.Mvc.dll" />
     <Content Include="Libreries\Kendo.Mvc.xml" />
-    <Content Include="Scripts\Kendo\kendo.all.min.js" />
-    <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\jquery-1.12.3.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg.min.js" />
+    <Content Include="Scripts\KendoUI\kendo.all.min.js" />
+    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\KendoUI\messages\kendo.messages.bg-BG.min.js" />
     <Content Include="Scripts\source\fonts\fontawesome-webfont.svg" />
     <Content Include="Scripts\source\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\source\fonts\ionicons.svg" />
@@ -625,12 +631,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Scripts\Kendo\kendo.all.min.js.map" />
-    <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Scripts\KendoUI\kendo.all.min.js.map" />
+    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg-BG.min.js.map" />
+    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg.min.js.map" />
+    <Content Include="Scripts\KendoUI\messages\kendo.messages.bg-BG.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\ImageBrowser\Create\" />
+    <Folder Include="Areas\Administration\ImageBrowser\Destroy\" />
+    <Folder Include="Areas\Administration\ImageBrowser\Read\" />
+    <Folder Include="Areas\Administration\ImageBrowser\Thumbnail\" />
+    <Folder Include="Areas\Administration\ImageBrowser\Upload\" />
     <Folder Include="Areas\Administration\Views\Administration\" />
+    <Folder Include="Content\UserFiles\Images\" />
+    <Folder Include="Images\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

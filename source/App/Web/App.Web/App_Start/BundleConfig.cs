@@ -9,6 +9,7 @@ namespace App.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        //"~/assets/js/jquery-1.12.3.min.js"));
                         "~/assets/js/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/them").Include(
@@ -57,8 +58,8 @@ namespace App.Web
                   "~/Scripts/KendoUI/kendo.all.min.js",
                   "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
 
-                  bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                   "~/Scripts/jquery-{version}.js"));
+                  bundles.Add(new ScriptBundle("~/bundles/jquerykendo").Include(
+                   "~/Scripts/jquery.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
