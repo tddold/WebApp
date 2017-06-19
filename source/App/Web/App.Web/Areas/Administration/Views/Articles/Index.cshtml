@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    //Layout = "~/Areas/Administration/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Administration/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
@@ -67,7 +67,7 @@
         @if (Model.CurentPage > 1)
         {
             <li>
-                <a href="~/Areas/Administration/Views/Articles/Index/@(Model.CurentPage - 1)" aria-label="Previus">
+                <a href="~/Administration/Articles/Index/@(Model.CurentPage - 1)" aria-label="Previus">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -81,14 +81,14 @@
                 className = "active";
             }
 
-            <li class="@className"><a href="~/Areas/Administration/Views/Articles/Index/@i">@i</a></li>
+            <li class="@className"><a href="~/Administration/Articles/Index/@i">@i</a></li>
         }
 
         @if (Model.CurentPage < Model.TotalPages)
         {
             <li>
-                <a href="~/Areas/Administration/Views/Articles/Index/@(Model.CurentPage + 1)" aria-label="Next">
-                    <span aria-hidden="true">&laquo;</span>
+                <a href="~/Administration/Articles/Index/@(Model.CurentPage + 1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
         }

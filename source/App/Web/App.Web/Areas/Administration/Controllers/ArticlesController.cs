@@ -22,6 +22,9 @@ namespace App.Web.Areas.Administration.Controllers
         //private readonly IBaseDataService<Article> articleService;
         private readonly IArticleService articles;
 
+        private const int ThumbnailHeight = 80;
+        private const int ThumbnailWidth = 80;
+
         public ArticlesController(IArticleService articles)
         {
             //this.articleService = articleService;
@@ -72,20 +75,21 @@ namespace App.Web.Areas.Administration.Controllers
 
             return View();
         }
-        //// GET: Administration/Articles/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Article article = db.Articles.Find(id);
-        //    if (article == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(article);
-        //}
+
+        // GET: Administration/Articles/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Article article = articles.GetById(id);
+            if (article == null)
+            {
+                return HttpNotFound();
+            }
+            return View(article);
+        }
 
         // GET: Administration/Articles/Create
         public ActionResult Create()
@@ -107,40 +111,52 @@ namespace App.Web.Areas.Administration.Controllers
                 return RedirectToAction("Index");
             }
 
-            //return View(article);
+            // return View(article);
             return this.Json(new[] { articles });
         }
 
-        //// GET: Administration/Articles/Edit/5
-        //public ActionResult Edit(int? id)
+        //public ActionResult CreateImage(string path, ImageBrowserEntry entry)
         //{
-        //    if (id == null)
+        //    var image = new Image();
+        //    var folder = image.GetFolderByPath(path);
+        //    if (folder != null)
         //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //        files.CreateDirectory(folder, entry.Name);
+        //        return Content("");
         //    }
-        //    Article article = db.Articles.Find(id);
-        //    if (article == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(article);
+        //    throw new HttpException(403, "Forbidden");
         //}
 
-        //// POST: Administration/Articles/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(article).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(article);
-        //}
+        // GET: Administration/Articles/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Article article = articles.GetById(id);
+            if (article == null)
+            {
+                return HttpNotFound();
+            }
+            return View(article);
+        }
+
+        // POST: Administration/Articles/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
+        {
+            if (ModelState.IsValid)
+            {
+                articles.Update(article);
+                articles.Save();
+                return RedirectToAction("Index");
+            }
+            return View(article);
+        }
 
         // GET: Administration/Articles/Delete/5
         public ActionResult Delete(int? id)
