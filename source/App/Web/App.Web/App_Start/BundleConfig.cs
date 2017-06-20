@@ -54,12 +54,12 @@ namespace App.Web
             bundles.Add(new ScriptBundle("~/bundles/blue").Include(
                      "~/assets/css/style-blue.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
-                  "~/Scripts/KendoUI/kendo.all.min.js",
-                  "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+            //      "~/Scripts/KendoUI/kendo.all.min.js",
+            //      "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
 
-                  bundles.Add(new ScriptBundle("~/bundles/jquerykendo").Include(
-                   "~/Scripts/jquery.min.js"));
+            //      bundles.Add(new ScriptBundle("~/bundles/jquerykendo").Include(
+            //       "~/Scripts/jquery.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -68,9 +68,9 @@ namespace App.Web
             bundles.Add(new StyleBundle("~/bundles/themjq").Include(
                   "~/assets/js/source/jquery.fancybox.css"));
 
-            bundles.Add(new StyleBundle("~/Content/kendo").Include(
-                   "~/Content/KendoUI/kendo.common.min.css",
-                   "~/Content/KendoUI/kendo.default.min.css"));
+            //bundles.Add(new StyleBundle("~/Content/kendo").Include(
+            //       "~/Content/KendoUI/kendo.common.min.css",
+            //       "~/Content/KendoUI/kendo.default.min.css"));
         }
     }
 }

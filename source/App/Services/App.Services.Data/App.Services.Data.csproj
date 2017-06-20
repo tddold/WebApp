@@ -67,6 +67,7 @@
     <Compile Include="Common\Contracts\IArticleService.cs" />
     <Compile Include="Common\Contracts\IBaseDataService{T}.cs" />
     <Compile Include="Common\Contracts\IBaseDataWithCreatorService{T}.cs" />
+    <Compile Include="Common\Contracts\IFolderService.cs" />
     <Compile Include="Common\Contracts\IGalleryService.cs" />
     <Compile Include="Common\Contracts\IHomeArticleService.cs" />
     <Compile Include="Common\Contracts\IImageService.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Common\GallerlyService.cs" />
     <Compile Include="Common\HomeArticleService.cs" />
     <Compile Include="Common\HtmlSanitizerAdapter.cs" />
+    <Compile Include="Common\FolderService.cs" />
     <Compile Include="Common\ImagesService.cs" />
     <Compile Include="Common\ItemArticleService.cs" />
     <Compile Include="Common\Service{T}.cs" />

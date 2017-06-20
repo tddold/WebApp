@@ -7,14 +7,11 @@
 
     @if (User.Identity.Name == "admin@site.com")
     {
-        @*@Scripts.Render("~/bundles/jquery")*@
-        @Scripts.Render("~/bundles/jquerykendo")
+        @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @Styles.Render("~/bundles/bootstrapthem")
         @Styles.Render("~/bundles/ionicons")
         @Styles.Render("~/bundles/font-awesome")
-        @Styles.Render("~/Content/kendo")
-        @Scripts.Render("~/bundles/kendo")
         @Styles.Render("~/bundles/animations")
         @Styles.Render("~/bundles/themjq")
         @Styles.Render("~/bundles/blue")
@@ -23,19 +20,7 @@
 
 
 
-        @*<script src="//code.jquery.com/jquery-1.12.3.min.js"></script>*@
-        @*<script src="https://kendo.cdn.telerik.com/2017.2.504/js/kendo.all.min.js"></script>
-            <script src="https://kendo.cdn.telerik.com/2017.2.504/js/kendo.aspnetmvc.min.js"></script>
-            <script src="https://kendo.cdn.telerik.com/2017.2.504/js/kendo.timezones.min.js"></script>*@
 
-        @*<link rel="stylesheet" href="http://kendo.cdn.telerik.com/2017.2.504/styles/kendo.common.min.css" />
-            <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2017.2.504/styles/kendo.blueopal.min.css" />*@
-
-        @*<script src="http://kendo.cdn.telerik.com/2017.2.504/js/jquery.min.js"></script>
-            <script src="http://kendo.cdn.telerik.com/2017.2.504/js/kendo.all.min.js"></script>*@
-
-        @*<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-            <script>tinymce.init({ selector: 'textarea' });</script>*@
 
     }
     else
@@ -145,10 +130,9 @@
 
     @if (User.Identity.Name == "admin@site.com")
     {
-       
-            @*@Scripts.Render("~/bundles/jquerykendo")*@
-        @*@Scripts.Render("~/bundles/kendo")*@
-        @*@Scripts.Render("~/bundles/bootstrap")*@
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
     }
     else

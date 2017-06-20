@@ -69,10 +69,6 @@
     <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
     </Reference>
-    <Reference Include="Kendo.Mvc, Version=2016.1.112.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\OnlineBushido\MVC-Project-master\Source\App\App.Web\Libraries\Kendo.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -401,58 +397,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\ionicons.css" />
-    <Content Include="Content\KendoUI\Default\editor.png" />
-    <Content Include="Content\KendoUI\Default\imagebrowser.png" />
-    <Content Include="Content\KendoUI\Default\indeterminate.gif" />
-    <Content Include="Content\KendoUI\Default\loading-image.gif" />
-    <Content Include="Content\KendoUI\Default\loading.gif" />
-    <Content Include="Content\KendoUI\Default\loading_2x.gif" />
-    <Content Include="Content\KendoUI\Default\markers.png" />
-    <Content Include="Content\KendoUI\Default\markers_2x.png" />
-    <Content Include="Content\KendoUI\Default\slider-h.gif" />
-    <Content Include="Content\KendoUI\Default\slider-v.gif" />
-    <Content Include="Content\KendoUI\Default\sprite.png" />
-    <Content Include="Content\KendoUI\Default\sprite_2x.png" />
-    <Content Include="Content\KendoUI\Default\sprite_kpi.png" />
-    <Content Include="Content\KendoUI\Default\sprite_kpi_2x.png" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\LICENSE.txt" />
-    <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.svg" />
-    <Content Include="Content\KendoUI\images\back.png" />
-    <Content Include="Content\KendoUI\images\kendoui.svg" />
-    <Content Include="Content\KendoUI\images\wp8_icons.png" />
-    <Content Include="Content\KendoUI\images\wp8_inverseicons.png" />
-    <Content Include="Content\KendoUI\kendo.common.min.css" />
-    <Content Include="Content\KendoUI\kendo.default.min.css" />
-    <Content Include="Content\KendoUI\textures\brushed-metal.png" />
-    <Content Include="Content\KendoUI\textures\dots1.png" />
-    <Content Include="Content\KendoUI\textures\dots10.png" />
-    <Content Include="Content\KendoUI\textures\dots11.png" />
-    <Content Include="Content\KendoUI\textures\dots12.png" />
-    <Content Include="Content\KendoUI\textures\dots13.png" />
-    <Content Include="Content\KendoUI\textures\dots2.png" />
-    <Content Include="Content\KendoUI\textures\dots3.png" />
-    <Content Include="Content\KendoUI\textures\dots4.png" />
-    <Content Include="Content\KendoUI\textures\dots5.png" />
-    <Content Include="Content\KendoUI\textures\dots6.png" />
-    <Content Include="Content\KendoUI\textures\dots7.png" />
-    <Content Include="Content\KendoUI\textures\dots8.png" />
-    <Content Include="Content\KendoUI\textures\dots9.png" />
-    <Content Include="Content\KendoUI\textures\glass-lighter.png" />
-    <Content Include="Content\KendoUI\textures\glass.png" />
-    <Content Include="Content\KendoUI\textures\highlight.png" />
-    <Content Include="Content\KendoUI\textures\hsv-gradient.png" />
-    <Content Include="Content\KendoUI\textures\hue.png" />
-    <Content Include="Content\KendoUI\textures\leather1.png" />
-    <Content Include="Content\KendoUI\textures\leather2.png" />
-    <Content Include="Content\KendoUI\textures\noise.png" />
-    <Content Include="Content\KendoUI\textures\stripe1.png" />
-    <Content Include="Content\KendoUI\textures\stripe2.png" />
-    <Content Include="Content\KendoUI\textures\stripe3.png" />
-    <Content Include="Content\KendoUI\textures\stripe4.png" />
-    <Content Include="Content\KendoUI\textures\stripe5.png" />
-    <Content Include="Content\KendoUI\textures\stripe6.png" />
-    <Content Include="Content\KendoUI\textures\transparency.png" />
-    <Content Include="Content\KendoUI\textures\transtexture.png" />
     <Content Include="Content\style-blue.css" />
     <Content Include="Content\web\editor\kendo-ui-web.png" />
     <Content Include="favicon.ico" />
@@ -460,11 +404,6 @@
     <Content Include="Libreries\Kendo.Mvc.xml" />
     <Content Include="Scripts\jquery-1.12.3.min.js" />
     <Content Include="Scripts\jquery.min.js" />
-    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg-BG.min.js" />
-    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg.min.js" />
-    <Content Include="Scripts\KendoUI\kendo.all.min.js" />
-    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js" />
-    <Content Include="Scripts\KendoUI\messages\kendo.messages.bg-BG.min.js" />
     <Content Include="Scripts\source\fonts\fontawesome-webfont.svg" />
     <Content Include="Scripts\source\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\source\fonts\ionicons.svg" />
@@ -530,24 +469,6 @@
     <Content Include="Areas\Administration\Views\Articles\Details.cshtml" />
     <Content Include="Areas\Administration\Views\Articles\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Articles\Index.cshtml" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSansMono.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSerif.ttf" />
-    <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.eot" />
-    <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.ttf" />
-    <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.woff" />
-    <Content Include="Content\KendoUI\images\kendoui.ttf" />
-    <Content Include="Content\KendoUI\images\kendoui.woff" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom-solid.js" />
@@ -632,11 +553,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Scripts\KendoUI\kendo.all.min.js.map" />
-    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js.map" />
-    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg-BG.min.js.map" />
-    <Content Include="Scripts\KendoUI\cultures\kendo.culture.bg.min.js.map" />
-    <Content Include="Scripts\KendoUI\messages\kendo.messages.bg-BG.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

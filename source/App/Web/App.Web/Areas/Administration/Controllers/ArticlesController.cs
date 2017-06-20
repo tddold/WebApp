@@ -8,8 +8,7 @@ using App.Services.Data.Common.Contracts;
 using App.Web.Areas.Administration.Models;
 using App.Web.Infrastructure;
 
-using Kendo.Mvc.Extensions;
-using Kendo.Mvc.UI;
+
 using System.Web;
 using System.Net;
 
@@ -104,6 +103,7 @@ namespace App.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
         {
+            var encoded = HttpUtility.HtmlEncode(Request.ContentEncoding);
             if (ModelState.IsValid)
             {
                 articles.Add(article);

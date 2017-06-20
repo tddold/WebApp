@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
+    <Compile Include="Folder.cs" />
     <Compile Include="Gallery.cs" />
     <Compile Include="HomeArticle.cs" />
     <Compile Include="Image.cs" />
