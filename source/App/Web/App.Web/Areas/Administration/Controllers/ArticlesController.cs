@@ -62,6 +62,7 @@ namespace App.Web.Areas.Administration.Controllers
                 };
 
                 HttpContext.Cache["Article_page_" + id] = viewModels;
+                
             }
 
             return View(viewModels);
@@ -100,10 +101,11 @@ namespace App.Web.Areas.Administration.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
         {
-            var encoded = HttpUtility.HtmlEncode(Request.ContentEncoding);
+            var encoded = HttpUtility.HtmlEncode(article.Context);
             if (ModelState.IsValid)
             {
                 articles.Add(article);

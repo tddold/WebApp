@@ -20,7 +20,10 @@
             @Html.DisplayNameFor(model => article.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => article.Context)
+            @{ var context = Html.DisplayNameFor(model => article.Context);
+                //var decodetContext = WebUtility.HtmlDecode(context)
+                Html.Raw(WebUtility.HtmlDecode(context.ToString()));
+            }
         </th>
         <th>
             @Html.DisplayNameFor(model => article.ImagePath)

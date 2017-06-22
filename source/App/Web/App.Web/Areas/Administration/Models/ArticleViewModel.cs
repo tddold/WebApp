@@ -28,6 +28,7 @@ namespace App.Web.Areas.Administration.Models
         [MaxLength(100), MinLength(5)]
         public string Title { get; set; }
 
+        [AllowHtml]
         public string Context { get; set; }
 
         public string ImagePath { get; set; }
