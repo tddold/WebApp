@@ -56,7 +56,8 @@
                             <h3>
                                 @article.Title
                                 <p>
-                                    @article.Context
+                                    @*@article.Context*@
+                                    @Html.Raw(article.Context)
                                     @*Lorem ipsumdolor sitamet, consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit. Lorem ipsumdolor sitamet,
                                         consect adipiscing elit Lorem ipsumdolor sitamet, consect adipiscing elit.*@
                                 </p>

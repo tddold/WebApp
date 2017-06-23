@@ -19,11 +19,8 @@
         <th>
             @Html.DisplayNameFor(model => article.Title)
         </th>
-        <th>
-            @{ var context = Html.DisplayNameFor(model => article.Context);
-                //var decodetContext = WebUtility.HtmlDecode(context)
-                Html.Raw(WebUtility.HtmlDecode(context.ToString()));
-            }
+        <th>                             
+            @Html.DisplayNameFor(model => article.Context)
         </th>
         <th>
             @Html.DisplayNameFor(model => article.ImagePath)
@@ -41,7 +38,8 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Context)
+                @*@Html.DisplayFor(modelItem => item.Context)*@
+                @Html.Raw(item.Context)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ImagePath)
