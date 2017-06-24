@@ -4,6 +4,7 @@ using App.Web.ViewModels.Articles;
 using App.Web.ViewModels.Home;
 using App.Web.ViewModels.HomeArticles;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace App.Web.Controllers
@@ -51,6 +52,11 @@ namespace App.Web.Controllers
                 .GetAll()
                 .To<ArticleDetailsViewModel>()
                 .ToList();
+
+            foreach (var item in allArticles)
+            {
+                item.Context = HttpUtility.HtmlDecode(item.Context);
+            }
 
            
 

@@ -106,6 +106,8 @@ namespace App.Web.Areas.Administration.Controllers
         public ActionResult Create([Bind(Include = "Id,Title,Context,IsDeleted")] Article article)
         {
             var encoded = HttpUtility.HtmlEncode(article.Context);
+            article.Context = string.Empty;
+            article.Context = encoded;
             if (ModelState.IsValid)
             {
                 articles.Add(article);
