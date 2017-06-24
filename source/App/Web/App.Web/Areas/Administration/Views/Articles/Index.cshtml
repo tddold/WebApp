@@ -22,9 +22,9 @@
         <th>                             
             @Html.DisplayNameFor(model => article.Context)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => article.ImagePath)
-        </th>
+        </th>*@
         @*<th>
                 @Html.DisplayNameFor(model => article..IsDeleted)
             </th>*@
@@ -41,9 +41,9 @@
                 @*@Html.DisplayFor(modelItem => item.Context)*@
                 @Html.Raw(item.Context)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.ImagePath)
-            </td>
+            </td>*@
             @*<td>
                     @Html.DisplayFor(modelItem => item.IsDeleted)
                 </td>*@

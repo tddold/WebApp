@@ -78,8 +78,8 @@ namespace App.Web.App_Start
             kernel.Bind<IDbContextSaveChanges>().To<AppDbContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfGenericRepository<>));
             kernel.Bind<IArticleService>().To<ArticleService>();
-            kernel.Bind<IHomeArticleService>().To<HomeArticleService>();
-            kernel.Bind<IItemArticleService>().To<ItemArticleService>();
+            //kernel.Bind<IHomeArticleService>().To<HomeArticleService>();
+            //kernel.Bind<IItemArticleService>().To<ItemArticleService>();
             kernel.Bind(typeof(IService<>)).To(typeof(Service<>));
             kernel.Bind(typeof(IBaseDataService<>)).To(typeof(BaseDataService<>)).InRequestScope();
         }

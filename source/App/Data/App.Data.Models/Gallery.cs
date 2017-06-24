@@ -3,19 +3,11 @@ using System.Collections.Generic;
 
 namespace App.Data.Models
 {
-    public class Gallery: BaseModel<int>, IAuditInfo, IDeletableEntity
+    public class Gallery : BaseModel<int>, IAuditInfo, IDeletableEntity
     {
-        private ICollection<Image> images;
+        public int CategoriId { get; set; }
 
-        public Gallery()
-        {
-            this.images = new HashSet<Image>();
-        }
+        public virtual ICollection<Category> Categories { get; set; }
 
-        public virtual ICollection<Image> Images
-        {
-            get => images;
-            set => images = value;
-        }
     }
 }

@@ -25,13 +25,11 @@ namespace App.Data
 
         public virtual IDbSet<Article> Articles { get; set; }
 
-        public virtual IDbSet<HomeArticle> HomeArticles { get; set; }
+        public virtual IDbSet<Services> Services { get; set; }
 
-        public virtual IDbSet<ItemArticle> ItemArticles { get; set; }
+        public virtual IDbSet<Category> Categories { get; set; }
 
         public virtual IDbSet<Image> Images { get; set; }
-
-        public virtual IDbSet<Folder> Folders { get; set; }
 
         public virtual IDbSet<Gallery> Galleries { get; set; }
 

@@ -10,7 +10,7 @@ namespace App.Web.ViewModels.Home
 
         public ICollection<ArticleDetailsViewModel> AllArticles { get; set; }
 
-        public ICollection<HomeArticleDetailViewModel> HomeArticles { get; set; }
+        //public ICollection<HomeArticleDetailViewModel> HomeArticles { get; set; }
 
     }
 }

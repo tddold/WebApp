@@ -33,15 +33,15 @@ namespace App.ConsoleClient
             }
             using (var unitOfWork = ctx.UnitOfWork())
             {
-                ctx.HomeArticles.Add(new HomeArticle
-                {
-                    ArticleId = 1
-                });
+                //ctx.HomeArticles.Add(new HomeArticle
+                //{
+                //    ArticleId = 1
+                //});
 
-                ctx.HomeArticles.Add(new HomeArticle
-                {
-                    ArticleId = 2
-                });
+                //ctx.HomeArticles.Add(new HomeArticle
+                //{
+                //    ArticleId = 2
+                //});
 
                 //ctx.ItemArticles.Add(new ItemArticle
                 //{

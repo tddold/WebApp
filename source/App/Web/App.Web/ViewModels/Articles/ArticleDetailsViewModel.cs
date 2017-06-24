@@ -28,8 +28,8 @@ namespace App.Web.ViewModels.Articles
         [Display(Name = "Context")]
         public string Context { get; set; }
 
-        [Display(Name = "Url")]
-        public string ImagePath { get; set; }
+        //[Display(Name = "Url")]
+        //public string ImagePath { get; set; }
 
         //public void CreateMappings(IMapperConfiguration configuration)
         //{

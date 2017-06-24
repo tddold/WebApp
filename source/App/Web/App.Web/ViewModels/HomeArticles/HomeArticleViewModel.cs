@@ -2,8 +2,8 @@
 
 namespace App.Web.ViewModels.HomeArticles
 {
-    public class HomeArticleViewModel
-    {
-        public ICollection<HomeArticleDetailViewModel> HomeArticle { get; set; }
-    }
+    //public class HomeArticleViewModel
+    //{
+    //    public ICollection<HomeArticleDetailViewModel> HomeArticle { get; set; }
+    //}
 }

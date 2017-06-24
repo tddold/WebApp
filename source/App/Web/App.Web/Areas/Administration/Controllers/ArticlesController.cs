@@ -103,7 +103,7 @@ namespace App.Web.Areas.Administration.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
+        public ActionResult Create([Bind(Include = "Id,Title,Context,IsDeleted")] Article article)
         {
             var encoded = HttpUtility.HtmlEncode(article.Context);
             if (ModelState.IsValid)
@@ -113,7 +113,7 @@ namespace App.Web.Areas.Administration.Controllers
                 return RedirectToAction("Index");
             }
 
-            // return View(article);
+            //return View(article);
             return this.Json(new[] { articles });
         }
 
@@ -152,7 +152,7 @@ namespace App.Web.Areas.Administration.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Context,ImagePath,IsDeleted")] Article article)
+        public ActionResult Edit([Bind(Include = "Id,Title,Context,IsDeleted")] Article article)
         {
             if (ModelState.IsValid)
             {

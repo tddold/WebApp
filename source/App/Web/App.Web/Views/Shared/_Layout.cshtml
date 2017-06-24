@@ -47,9 +47,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Начло", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Услуги", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Галериа", "Index", "Home")</li>
+                    <li>@Html.ActionLink("За нас", "About", "Home")</li>
+                    <li>@Html.ActionLink("Контаки", "Contact", "Home")</li>
                     @if (User.Identity.Name == "admin@site.com")
                     {
                         <li>@Html.ActionLink("Admin", "Index", "Administration/Articles")</li>

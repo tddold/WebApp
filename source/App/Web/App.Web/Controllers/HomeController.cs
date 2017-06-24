@@ -13,13 +13,11 @@ namespace App.Web.Controllers
         private int cashTime = 30 * 60;
 
         private readonly IArticleService articles;
-        private readonly IHomeArticleService homeArticles;
         //private IBaseDataService<Article> articles;
 
-        public HomeController(IArticleService articles, IHomeArticleService homeArticles)
+        public HomeController(IArticleService articles)
         {
             this.articles = articles;
-            this.homeArticles = homeArticles;
         }
 
         public ActionResult Index()
@@ -54,16 +52,12 @@ namespace App.Web.Controllers
                 .To<ArticleDetailsViewModel>()
                 .ToList();
 
-            var homeArticle = homeArticles
-                .GetAll()
-                .To<HomeArticleDetailViewModel>()
-                .ToList();
+           
 
             var homeViewModel = new HomeViewModel
             {
                 TopArticles = topArticles,
-                AllArticles = allArticles,
-                HomeArticles = homeArticle
+                AllArticles = allArticles
             };
 
             return homeViewModel;

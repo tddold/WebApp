@@ -117,20 +117,20 @@ namespace App.Data.Migrations
                 context.SaveChanges();
             }
 
-            if (!context.HomeArticles.Any())
-            {
-                context.HomeArticles.Add(new HomeArticle
-                {
-                    ArticleId = 1
-                });
+            //if (!context.Categories.Any())
+            //{
+            //    context.Categories.Add(new Category
+            //    {
+            //        ArticleId = 1
+            //    });
 
-                context.HomeArticles.Add(new HomeArticle
-                {
-                    ArticleId = 2
-                });
+            //    context.HomeArticles.Add(new HomeArticle
+            //    {
+            //        ArticleId = 2
+            //    });
 
-                context.SaveChanges();
-            }
+            //    context.SaveChanges();
+            //}
         }
     }
 }
