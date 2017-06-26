@@ -30,7 +30,5 @@ namespace App.Web.Areas.Administration.Models
 
         [AllowHtml]
         public string Context { get; set; }
-
-        public string ImagePath { get; set; }
     }
 }

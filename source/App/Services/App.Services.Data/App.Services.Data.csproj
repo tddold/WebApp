@@ -63,10 +63,12 @@
     <Compile Include="Common\ArticleService.cs" />
     <Compile Include="Common\BaseDataService{T}.cs" />
     <Compile Include="Common\BaseDataWithCreatorService{T}.cs" />
+    <Compile Include="Common\CategoryService.cs" />
     <Compile Include="Common\Contracts\IAdministrationService{T}.cs" />
     <Compile Include="Common\Contracts\IArticleService.cs" />
     <Compile Include="Common\Contracts\IBaseDataService{T}.cs" />
     <Compile Include="Common\Contracts\IBaseDataWithCreatorService{T}.cs" />
+    <Compile Include="Common\Contracts\ICategoryService.cs" />
     <Compile Include="Common\Contracts\IFolderService.cs" />
     <Compile Include="Common\Contracts\IGalleryService.cs" />
     <Compile Include="Common\Contracts\IHomeArticleService.cs" />

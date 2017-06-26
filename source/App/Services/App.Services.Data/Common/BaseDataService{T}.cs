@@ -37,6 +37,11 @@ namespace App.Services.Data.Common
             Data.Save();
         }
 
+        public void Delete(T entity)
+        {
+            Data.Delete(entity);
+        }
+
         public void Dispose()
         {
             Data.Dispose();

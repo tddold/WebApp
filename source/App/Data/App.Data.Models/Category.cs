@@ -5,7 +5,7 @@ namespace App.Data.Models
 {
     public class Category : BaseModel<int>, IAuditInfo, IDeletableEntity
     {
-        ICollection<Image> images;
+        private ICollection<Image> images;
 
         public Category()
         {
@@ -13,6 +13,10 @@ namespace App.Data.Models
         }
 
         public string Name { get; set; }
+
+        public int GalleryId { get; set; }
+
+        public virtual Gallery Galery { get; set; }
 
         public virtual ICollection<Image> Images
         {

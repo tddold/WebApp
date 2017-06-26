@@ -10,6 +10,8 @@ namespace App.Services.Data.Common.Contracts
 
         void Delete(int id);
 
+        void Delete(T entity);
+
         IQueryable<T> GetAll();
 
         T GetById(int id);

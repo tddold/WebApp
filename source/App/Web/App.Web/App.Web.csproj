@@ -234,9 +234,12 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ArticlesController.cs" />
+    <Compile Include="Areas\Administration\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImageBrowserController.cs" />
     <Compile Include="Areas\Administration\Models\ArticleInputViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ArticleViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\CategoryInputViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\CategoryViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -469,6 +472,11 @@
     <Content Include="Areas\Administration\Views\Articles\Details.cshtml" />
     <Content Include="Areas\Administration\Views\Articles\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Articles\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom-solid.js" />

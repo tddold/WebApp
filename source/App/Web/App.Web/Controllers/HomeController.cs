@@ -53,12 +53,10 @@ namespace App.Web.Controllers
                 .To<ArticleDetailsViewModel>()
                 .ToList();
 
-            foreach (var item in allArticles)
-            {
-                item.Context = HttpUtility.HtmlDecode(item.Context);
-            }
-
-           
+            //foreach (var item in allArticles)
+            //{
+            //    item.Context = HttpUtility.HtmlDecode(item.Context);
+            //}           
 
             var homeViewModel = new HomeViewModel
             {

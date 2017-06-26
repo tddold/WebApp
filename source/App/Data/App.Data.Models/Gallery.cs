@@ -5,7 +5,13 @@ namespace App.Data.Models
 {
     public class Gallery : BaseModel<int>, IAuditInfo, IDeletableEntity
     {
-        public int CategoriId { get; set; }
+        private ICollection<Category> categories;
+        public Gallery()
+        {
+            this.categories = new HashSet<Category>();
+        }
+
+        public string Name { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
 

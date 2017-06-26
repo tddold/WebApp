@@ -1,0 +1,72 @@
+﻿@model App.Web.Areas.Administration.Models.CategoryInputViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administration/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@{
+    var category = Model.Category.First();
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => category.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Category) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
+<nav>
+    <ul class="pagination">
+        @if (Model.CurentPage > 1)
+        {
+            <li>
+                <a href="~/Administration/Category/Index/@(Model.CurentPage - 1)" aria-label="Previus">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            var className = string.Empty;
+            if (Model.CurentPage == i)
+            {
+                className = "active";
+            }
+
+            <li class="@className"><a href="~/Administration/Category/Index/@i">@i</a></li>
+        }
+
+        @if (Model.CurentPage < Model.TotalPages)
+        {
+            <li>
+                <a href="~/Administration/Category/Index/@(Model.CurentPage + 1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
