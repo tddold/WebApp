@@ -1,4 +1,4 @@
-﻿@model App.Web.Areas.Administration.Models.CategoryInputViewModel
+﻿@model App.Web.Areas.Administration.Models.CategoryViewModel
 
 @{
     ViewBag.Title = "View";
@@ -8,23 +8,23 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CategoryInputViewModel</h4>
+    <h4>CategoryViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CurentPage)
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Id)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CurentPage)
-        </dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>*@
 
         <dt>
-            @Html.DisplayNameFor(model => model.TotalPages)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TotalPages)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
     </dl>
