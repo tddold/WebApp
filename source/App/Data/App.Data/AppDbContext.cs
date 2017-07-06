@@ -31,8 +31,6 @@ namespace App.Data
 
         public virtual IDbSet<Image> Images { get; set; }
 
-        public virtual IDbSet<Gallery> Galleries { get; set; }
-
         public static AppDbContext Create()
         {
             return new AppDbContext();

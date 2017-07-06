@@ -14,12 +14,12 @@ namespace App.Web.Areas.Administration.Controllers
     {
         private const int ItemsPerPage = 5;
         private readonly ICategoryService categories;
-        private readonly IGalleryService galleries;
+        
 
-        public CategoryController(ICategoryService categories, IGalleryService galleries)
+        public CategoryController(ICategoryService categories)
         {
             this.categories = categories;
-            this.galleries = galleries;
+            
         }
 
         // GET: Administration/Category
@@ -70,16 +70,17 @@ namespace App.Web.Areas.Administration.Controllers
         // GET: Administration/Category/Create
         public ActionResult Create()
         {
-            var galleryViewModel = galleries.GetAll().ToList();
+            //var galleryViewModel = galleries.GetAll().ToList();
 
-            CategoryViewModel viewModel = new CategoryViewModel
-            {
-                Gallery = galleryViewModel
-            };
+            //CategoryViewModel viewModel = new CategoryViewModel
+            //{
+            //    Gallery = galleryViewModel
+            //};
 
-            return View(viewModel);
+            //return View(viewModel);
+            return View();
 
-           
+
         }
 
         // POST: Administration/Category/Create

@@ -27,9 +27,7 @@ namespace App.Web.Areas.Administration.Models
         [MaxLength(100), MinLength(5)]
         public string Name { get; set; }
                
-        public int GalleryId { get; set; }
-
-        public ICollection<Gallery> Gallery { get; set; }
+       
 
         //public ICollection<Image> Images { get; set; }
 

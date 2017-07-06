@@ -79,7 +79,7 @@ namespace App.Web.App_Start
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfGenericRepository<>));
             kernel.Bind<IArticleService>().To<ArticleService>();
             kernel.Bind<ICategoryService>().To<CategoryService>();
-            kernel.Bind<IGalleryService>().To<GallerlyService>();
+            //kernel.Bind<IGalleryService>().To<GallerlyService>();
             //kernel.Bind<IHomeArticleService>().To<HomeArticleService>();
             //kernel.Bind<IItemArticleService>().To<ItemArticleService>();
             kernel.Bind(typeof(IService<>)).To(typeof(Service<>));

@@ -13,10 +13,7 @@ namespace App.Data.Models
         }
 
         public string Name { get; set; }
-
-        public int GalleryId { get; set; }
-
-        public virtual Gallery Galery { get; set; }
+        
 
         public virtual ICollection<Image> Images
         {

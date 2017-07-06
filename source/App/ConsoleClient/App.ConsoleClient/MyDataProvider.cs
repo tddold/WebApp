@@ -11,22 +11,22 @@ namespace App.ConsoleClient
         //private IRepository<HomeArticle> homeArticles;
         //private IRepository<ItemArticle> itemArticles;
         private IRepository<Image> images;
-        private IRepository<Gallery> galleries;
+        
 
         public MyDataProvider(
             Func<IUnitOfWork> unitOfWork,
             IRepository<Article> articles,
             //IRepository<HomeArticle> homeArticles,
             //IRepository<ItemArticle> itemArticles,
-            IRepository<Image> images,
-            IRepository<Gallery> galleries)
+            IRepository<Image> images)
+
         {
             this.UnitOfWork = unitOfWork;
             this.Articles = articles;
             //this.HomeArticles = homeArticles;
             //this.ItemArticles = itemArticles;
             this.Images = images;
-            this.Galleries = galleries;
+            
         }
 
         public Func<IUnitOfWork> UnitOfWork { get; set; }
@@ -39,6 +39,6 @@ namespace App.ConsoleClient
 
         public IRepository<Image> Images { get; set; }
 
-        public IRepository<Gallery> Galleries { get; set; }
+        
     }
 }

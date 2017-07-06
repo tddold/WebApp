@@ -7,11 +7,6 @@
 
 <h2>Create</h2>
 
-@{
-    var gallery = Model.Gallery.First();
-}
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -31,7 +26,7 @@
 
 
 
-        <div class="form-group">
+        @*<div class="form-group">
 
 
             @Html.LabelFor(model => model.Gallery, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -46,7 +41,7 @@
 
                 @Html.ValidationMessageFor(model => model.Gallery, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         @*<div class="form-group">
 
