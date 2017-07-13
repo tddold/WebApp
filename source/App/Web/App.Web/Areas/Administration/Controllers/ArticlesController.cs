@@ -131,8 +131,7 @@ namespace App.Web.Areas.Administration.Controllers
         //    throw new HttpException(403, "Forbidden");
         //}
 
-        // GET: Administration/Articles/Edit/5
-        
+        // GET: Administration/Articles/Edit/5        
         public ActionResult Edit(int? id)
         {
             if (id == null)

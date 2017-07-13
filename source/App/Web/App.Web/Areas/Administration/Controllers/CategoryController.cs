@@ -28,12 +28,12 @@ namespace App.Web.Areas.Administration.Controllers
         {
 
             CategoryInputViewModel viewModels;
-            if (HttpContext.Cache["Category_page_" + id] != null)
-            {
-                viewModels = (CategoryInputViewModel)HttpContext.Cache["Category_page_" + id];
-            }
-            else
-            {
+            //if (HttpContext.Cache["Category_page_" + id] != null)
+            //{
+            //    viewModels = (CategoryInputViewModel)HttpContext.Cache["Category_page_" + id];
+            //}
+            //else
+            //{
                 int page = id;
                 int allItemsCount = categories.GetAll().Count();
                 int totalPages = (int)Math.Ceiling(allItemsCount / (decimal)ItemsPerPage);
@@ -57,7 +57,7 @@ namespace App.Web.Areas.Administration.Controllers
 
                 HttpContext.Cache["Category_page_" + id] = viewModels;
 
-            }
+            //}
 
             return View(viewModels);
         }
@@ -95,12 +95,10 @@ namespace App.Web.Areas.Administration.Controllers
 
         // POST: Administration/Category/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Id,Name,GaleryId,Gallery, IsDeleted")] Category category)
+        public ActionResult Create([Bind(Include = "Id,Name, IsDeleted")] Category category)
         {
             if (ModelState.IsValid)
             {
-
-
                 categories.Add(category);
                 categories.Save();
                 return RedirectToAction("Index");
@@ -112,47 +110,83 @@ namespace App.Web.Areas.Administration.Controllers
         }
 
         // GET: Administration/Category/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = categories.GetById(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
         }
 
-        // POST: Administration/Category/Edit/5
+        // POST: Administration/Articles/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        //[ValidateInput(false)]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name")] Category category)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                categories.Update(category);
+                categories.Save();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            //return View(article);
+            return this.Json(new[] { categories });
+
         }
 
-        // GET: Administration/Category/Delete/5
-        public ActionResult Delete(int id)
+        // GET: Administration/Articles/Delete/5
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Category category = categories.GetById(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
         }
 
-        // POST: Administration/Category/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        // POST: Administration/Articles/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int? id)
         {
-            try
+            if (id == null)
             {
-                // TODO: Add delete logic here
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
+            Category category = categories.GetById(id);
+            if (category == null)
             {
-                return View();
+                return HttpNotFound();
             }
+
+            categories.Delete(category);
+            categories.Save();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                categories.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }
