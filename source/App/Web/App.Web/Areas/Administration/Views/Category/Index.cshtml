@@ -12,7 +12,7 @@
 </p>
 
 @{
-    var category = Model.Category.FirstOrDefault();
+    var category = Model.Category.First();
 }
 
 <table class="table">
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
         </td>
     </tr>
 }
