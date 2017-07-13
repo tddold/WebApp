@@ -108,6 +108,12 @@ namespace App.Web.Areas.Administration.Controllers
             //var encoded = HttpUtility.HtmlEncode(article.Context);
             //article.Context = string.Empty;
             //article.Context = encoded;
+
+            var errors = ModelState
+                .Where(x => x.Value.Errors.Count > 0)
+                .Select(x => new { x.Key, x.Value.Errors })
+                .ToArray();
+
             if (ModelState.IsValid)
             {
                 articles.Add(article);
