@@ -34,12 +34,12 @@ namespace App.Web.Areas.Administration.Controllers
         public ActionResult Index(int id = 1)
         {
             ArticleInputViewModel viewModels;
-            if (HttpContext.Cache["Article_page_" + id] != null)
-            {
-                viewModels = (ArticleInputViewModel)HttpContext.Cache["Article_page_" + id];
-            }
-            else
-            {
+            //if (HttpContext.Cache["Article_page_" + id] != null)
+            //{
+            //    viewModels = (ArticleInputViewModel)HttpContext.Cache["Article_page_" + id];
+            //}
+            //else
+            //{
                 int page = id;
                 int allItemsCount = articles.GetAll().Count();
                 int totalPages = (int)Math.Ceiling(allItemsCount / (decimal)ItemsPerPage);
@@ -61,9 +61,9 @@ namespace App.Web.Areas.Administration.Controllers
                     Article = articleViewModel
                 };
 
-                HttpContext.Cache["Article_page_" + id] = viewModels;
+            //    HttpContext.Cache["Article_page_" + id] = viewModels;
                 
-            }
+            //}
 
             return View(viewModels);
         }
@@ -117,19 +117,7 @@ namespace App.Web.Areas.Administration.Controllers
 
             //return View(article);
             return this.Json(new[] { articles });
-        }
-
-        //public ActionResult CreateImage(string path, ImageBrowserEntry entry)
-        //{
-        //    var image = new Image();
-        //    var folder = image.GetFolderByPath(path);
-        //    if (folder != null)
-        //    {
-        //        files.CreateDirectory(folder, entry.Name);
-        //        return Content("");
-        //    }
-        //    throw new HttpException(403, "Forbidden");
-        //}
+        }        
 
         // GET: Administration/Articles/Edit/5        
         public ActionResult Edit(int? id)
@@ -184,10 +172,19 @@ namespace App.Web.Areas.Administration.Controllers
         // POST: Administration/Articles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int? id)
         {
-            //Article article = articles.GetById(id);
-            articles.Delete(id);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Article article = articles.GetById(id);
+            if (article == null)
+            {
+                return HttpNotFound();
+            }
+            articles.Delete(article);
             articles.Save();
             return RedirectToAction("Index");
         }

@@ -21,55 +21,7 @@
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-
-
-
-        @*<div class="form-group">
-
-
-            @Html.LabelFor(model => model.Gallery, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-
-                @Html.DropDownListFor(
-                    x => x.Gallery,
-                    new SelectList(Model.Gallery, "Id", "Name", Model.Gallery),
-                    "-- Select --"
-               )
-
-
-                @Html.ValidationMessageFor(model => model.Gallery, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-        @*<div class="form-group">
-
-
-                @Html.LabelFor(model => model.Gallery, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DisplayFor(model => model.Gallery, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Gallery, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ImagePath, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.IsDeleted, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.IsDeleted)
-                        @Html.ValidationMessageFor(model => model.IsDeleted, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>*@
+        </div>       
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -78,15 +30,6 @@
         </div>
     </div>
 }
-
-
-
-
-
-
-
-
-
 
 
 <div>
