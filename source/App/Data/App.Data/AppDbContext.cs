@@ -62,6 +62,8 @@ namespace App.Data
             }
         }
 
+        //public System.Data.Entity.DbSet<App.Web.Areas.Administration.Models.ImageViewModel> ImageViewModels { get; set; }
+
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
         //    this.OnArticleCreating(modelBuilder);

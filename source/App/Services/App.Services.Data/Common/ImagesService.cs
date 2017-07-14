@@ -51,5 +51,13 @@ namespace App.Services.Data.Common
                 photo.SaveAs(path);
             }
         }
+
+        public IQueryable<Image> GetAllImages(int count)
+        {
+            return this.image
+                .All
+                .OrderBy(a => a.Id)
+                .Take(count);
+        }
     }
 }

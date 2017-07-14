@@ -83,6 +83,7 @@ namespace App.Web.Areas.Administration.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Article article = articles.GetById(id);
             if (article == null)
             {
@@ -167,6 +168,7 @@ namespace App.Web.Areas.Administration.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Article article = articles.GetById(id);
             if (article == null)
             {
@@ -201,6 +203,7 @@ namespace App.Web.Areas.Administration.Controllers
             {
                 articles.Dispose();
             }
+
             base.Dispose(disposing);
         }
     }
