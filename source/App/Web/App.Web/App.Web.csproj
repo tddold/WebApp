@@ -236,7 +236,7 @@
     <Compile Include="Areas\Administration\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Administration\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImageBrowserController.cs" />
-    <Compile Include="Areas\Administration\Controllers\ImageController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Models\ArticleInputViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ArticleViewModel.cs" />
     <Compile Include="Areas\Administration\Models\CategoryInputViewModel.cs" />

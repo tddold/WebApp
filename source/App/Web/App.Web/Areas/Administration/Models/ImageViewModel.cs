@@ -2,7 +2,9 @@
 using App.Services.Data.Common;
 using App.Services.Data.Common.Contracts;
 using App.Web.Infrastructure;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 using System.Web.Mvc;
 
 namespace App.Web.Areas.Administration.Models
@@ -32,6 +34,11 @@ namespace App.Web.Areas.Administration.Models
         public int GategoryId { get; set; }
 
         public virtual Category Category { get; set; }
+
+        //[Required]
+        //public HttpPostedFileBase File { get; set; }
+
+        public IEnumerable<HttpPostedFileBase> File { get; set; }
     }
 
 }
